@@ -8,62 +8,78 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-            padding: 50px;
-            background-image: url('https://knowhow.distrelec.com/wp-content/uploads/2024/10/GettyImages-1638779039-1-scaled.jpg"');
-            background-size: 1920px 800px;
+            padding: 5%;
+            background-image: url('https://knowhow.distrelec.com/wp-content/uploads/2024/10/GettyImages-1638779039-1-scaled.jpg');
+            background-size: cover;
+            background-position: center;
             background-color: #000000;
+            margin: 0;
         }
         .container {
-    
-            background: rgba(162, 162, 162, 0.8); 
-            padding: 30px;
+            background: rgba(162, 162, 162, 0.8);
+            padding: 5%;
             border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
+            max-width: 90%;
             margin: auto;
-}
+        }
         
         h1 {
             color: #333;
+            font-size: 1.8rem;
         }
         p {
-            font-size: 18px;
+            font-size: 1rem;
             color: #ffffff;
+            line-height: 1.5;
+        }
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         .share-buttons a {
-        display: inline-block;
-        margin: 3px;
-        padding: 10px 20px;
-        border-radius: 20px;
-        color: rgb(255, 255, 255);
-        font-size: 18px;
-        transition: background-color 0.3s, transform 0.3s; 
-    }
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+            text-align: center;
+            flex: 1 1 40%; /* Responsive button sizing */
+            max-width: 150px;
+        }
+        .facebook { background: #3b5998; }
+        .twitter { background: #000000; }
+        .linkedin { background: #0077b5; }
+        .whatsapp { background: #25d366; }
+        .instagram { background: #E4405F; }
 
-    .facebook { background: #3b5998; }
-    .twitter { background: #000000; }
-    .linkedin { background: #0077b5; }
-    .whatsapp { background: #25d366; }
-    .instagram { background: #E4405F; }
-
-
-    .share-buttons a:hover {
-        transform: scale(1.15); 
-        opacity: 0.9; 
-    }
+        .share-buttons a:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            p { font-size: 0.9rem; }
+            .container { padding: 8%; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1> Thank You for Voting in the PC.com Awards 2025! </h1>
-        <p>Want to win a <strong>brand-new lorem ipsum?</strong> <br>Share your vote to increase your chances! </p>
+        <h1>Thank You for Voting in the PC.com Awards 2025!</h1>
+        <p>Want to win a <strong>brand-new lorem ipsum?</strong> <br>Share your vote to increase your chances!</p>
         
         <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://emptycrwn.github.io/PcAwards2025/&quote=I%20just%20voted%20for%20the%20PC.com%20Awards%202025!%20Who%20do%20you%20think%20will%20win?%20Cast%20your%20vote%20now!%20🎉%20Today%20is%20Wednesday,%20February%205,%202025%20and%20here%20are%20the%20results:" class="facebook" target="_blank" class="facebook" target="_blank">Share on Facebook</a>
-            <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!+Who+do+you+think+will+win?+Cast+your+vote+now!+🎉+%23PCcomAwards2025+https://emptycrwn.github.io/PcAwards2025/" class="twitter" target="_blank">Share on X</a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://emptycrwn.github.io/PcAwards2025/" class="linkedin" target="_blank">Share on LinkedIn</a>
-            <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!+Who+do+you+think+will+win?+Cast+your+vote+now!+🎉+%23PCcomAwards2025+https://emptycrwn.github.io/PcAwards2025/" class="whatsapp" target="_blank">Share on WhatsApp</a>
-            <a href="https://www.instagram.com/" class="instagram" target="_blank">Share on Instagram</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://emptycrwn.github.io/PcAwards2025/&quote=I%20just%20voted%20for%20the%20PC.com%20Awards%202025!%20Who%20do%20you%20think%20will%20win?%20Cast%20your%20vote%20now!%20🎉%20" class="facebook" target="_blank">Facebook</a>
+            <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!+Who+do+you+think+will+win?+Cast+your+vote+now!+🎉+%23PCcomAwards2025+https://emptycrwn.github.io/PcAwards2025/" class="twitter" target="_blank">Twitter/X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://emptycrwn.github.io/PcAwards2025/" class="linkedin" target="_blank">LinkedIn</a>
+            <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!+Who+do+you+think+will+win?+Cast+your+vote+now!+🎉+%23PCcomAwards2025+https://emptycrwn.github.io/PcAwards2025/" class="whatsapp" target="_blank">WhatsApp</a>
+            <a href="https://www.instagram.com/" class="instagram" target="_blank">Instagram</a>
         </div>
     </div>
 </body>
