@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You for Voting!</title>
     <style>
-        body {
+        html, body {
+            height: 100%;
+            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-            padding: 5%;
             background-image: url('https://knowhow.distrelec.com/wp-content/uploads/2024/10/GettyImages-1638779039-1-scaled.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-color: #000000;
-            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .container {
             background: rgba(162, 162, 162, 0.8);
@@ -65,10 +68,6 @@
         }
         
         @media (max-width: 600px) {
-            body {
-                background-size: contain;
-                background-attachment: scroll;
-            }
             h1 { font-size: 1.5rem; }
             p { font-size: 0.9rem; }
             .container { padding: 8%; }
