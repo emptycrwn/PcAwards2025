@@ -15,12 +15,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('https://knowhow.distrelec.com/wp-content/uploads/2024/10/GettyImages-1638779039-1-scaled.jpg');
+            background-image: url('https://i.pinimg.com/originals/75/8a/52/758a523d6f34399c5e190c5f5391bd7e.gif ');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-color: #000000;
+            animation: backgroundPulse 5s infinite;
         }
+
+        @keyframes backgroundPulse {
+        10%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.2);
+            }
+        }
+
         .container {
             background: #160D3C;
             padding: 3%;
@@ -46,6 +57,12 @@
             color: #ffffff;
             line-height: 1.5;
         }
+        .countdown {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+
         .share-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -62,10 +79,29 @@
             transition: transform 0.3s;
             width: 50px;
             height: 50px;
+            position: relative;
         }
         .share-buttons img {
             width: 100%;
             height: auto;
+        }
+        .share-buttons a::after {
+            content: attr(title);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000000;
+            color: #ffffff;
+            font-size: 0.8rem;
+            padding: 2px 5px;
+            border-radius: 3px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .share-buttons a:hover::after {
+            opacity: 1;
         }
         .share-buttons a:hover {
             transform: scale(1.1);
@@ -82,24 +118,45 @@
     <div class="container">
         <h1>Thank You for Voting <br> in the PC.com <br> Readers Choice Awards!</h1>
         <p>Want to win a <strong>brand-new lorem ipsum?</strong> <br>Share your vote to increase your chances!</p>
-        
+
+        <div class="countdown">
+            Voting closes in <span id="timer">00:00:00</span>!
+        </div>
+
         <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://emptycrwn.github.io/PcAwards2025/" class="facebook" target="_blank">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://emptycrwn.github.io/PcAwards2025/" class="facebook" target="_blank" title="Share on Facebook">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
             </a>
-            <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="twitter" target="_blank">
+            <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="twitter" target="_blank" title="Share on Twitter/X">
                 <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="Twitter/X">
             </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://emptycrwn.github.io/PcAwards2025/" class="linkedin" target="_blank">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://emptycrwn.github.io/PcAwards2025/" class="linkedin" target="_blank" title="Share on LinkedIn">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
             </a>
-            <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="whatsapp" target="_blank">
+            <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="whatsapp" target="_blank" title="Share on WhatsApp">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
             </a>
-            <a href="https://www.instagram.com/" class="instagram" target="_blank">
+            <a href="https://www.instagram.com/" class="instagram" target="_blank" title="Share on Instagram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
             </a>
         </div>
     </div>
+
+    <script>
+        const endTime = new Date('2025-04-30T23:59:59').getTime(); // Voting ends on April 30, 2025
+        setInterval(() => {
+            const now = new Date().getTime();
+            const timeLeft = endTime - now;
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                document.getElementById("timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById("timer").innerText = "Voting is Closed!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
