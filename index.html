@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
-
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -18,14 +17,14 @@
         body {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            min-height: 100vh; 
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             background: url('https://i.gifer.com/7SYH.gif') center/cover no-repeat #000000;
             animation: backgroundPulse 5s infinite;
-            color: #ffffff; 
+            color: #ffffff;
         }
 
         @keyframes backgroundPulse {
@@ -41,33 +40,12 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: transparent; 
-            backdrop-filter: blur(10px); 
+            background: transparent;
         }
 
         .logo {
-            width: 150px; 
+            width: 150px;
             height: auto;
-        }
-
-        .container {
-            background: linear-gradient(145deg, #023342, #000203);
-            padding: 3%;
-            border-radius: 20px;
-            box-shadow:
-                0 0 30px 30px rgba(0, 35, 47, 0.6),
-                0 0 20px 20px rgba(144, 189, 200, 0.8),
-                inset 0 0 20px rgba(242, 242, 242, 0.7);
-            max-width: 600px;
-            width: 90%; /*  Responsiveness */
-            margin: auto;
-            position: relative;
-            z-index: 1;
-            opacity: 0.95;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 2rem; 
         }
 
         h1 {
@@ -75,15 +53,17 @@
             font-size: 2.5rem;
             font-weight: 600;
             text-shadow: 5px 5px 0 #000203, 8px 8px 0 #023342;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 1.2rem;
             line-height: 1.5;
+            margin-bottom: 20px;
         }
 
-        strong { 
-            color: gold; 
+        strong {
+            color: gold;
             font-weight: bolder;
         }
 
@@ -98,16 +78,17 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
+            margin-top: 20px;
         }
 
-        .share-button { 
+        .share-button {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 60px;
             height: 60px;
-            border-radius: 50%; 
-            background: radial-gradient(circle, #04505f, #000203);
+            border-radius: 50%;
+            background: transparent;
             transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid #475682;
             flex-shrink: 0;
@@ -117,15 +98,14 @@
         .share-button:hover {
             transform: scale(1.2);
             border-color: #FFFFFF;
-            box-shadow: 0 8px 20px rgba(71, 40, 130, 1), inset 0 4px 8px rgba(71, 40, 130, 0.5);
+            box-shadow: 0 8px 20px rgba(71, 40, 130, 1);
         }
 
         .share-button img {
             width: 70%;
             height: auto;
-            display: block; 
+            display: block;
         }
-
 
         footer {
             margin-top: auto;
@@ -135,11 +115,9 @@
             font-size: 0.8rem;
         }
 
-        /* Media Queries */
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
             h1 { font-size: 1.8rem; }
             p { font-size: 1rem; }
-            .container { padding: 5%; }
             .share-buttons { gap: 5px; }
             .share-button {
                 width: 50px;
@@ -149,34 +127,34 @@
     </style>
 </head>
 <body>
+
     <header class="header">
-        <img src="https://imgur.com/l22XlHR.png" alt="Your Logo" class="logo">
+        <img src="https://i.imgur.com/l22XlHR.png" alt="Your Logo" class="logo">
     </header>
-    <div class="container">
-        <h1>Thank You for Voting <br> in the PC.com <br> Readers Choice Awards!</h1>
-        <p>Want to win a <strong>brand-new lorem ipsum?</strong> <br>Share your vote to increase your chances!</p>
 
-        <div class="countdown">
-            Voting closes in <span id="timer">00:00:00</span>!
-        </div>
+    <h1>Thank You for Voting <br> in the PC.com <br> Readers Choice Awards!</h1>
+    <p>Want to win a <strong>brand-new lorem ipsum?</strong> <br>Share your vote to increase your chances!</p>
 
-        <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button facebook" target="_blank" rel="noopener noreferrer" title="Share on Facebook">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
-            </a>
-            <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="share-button twitter" target="_blank" rel="noopener noreferrer" title="Share on Twitter/X">
-                <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="Twitter/X">
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button linkedin" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
-            </a>
-            <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="share-button whatsapp" target="_blank" rel="noopener noreferrer" title="Share on WhatsApp">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            </a>
-            <a href="https://www.instagram.com/" class="share-button instagram" target="_blank" rel="noopener noreferrer" title="Share on Instagram">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-            </a>
-        </div>
+    <div class="countdown">
+        Voting closes in <span id="timer">00:00:00</span>!
+    </div>
+
+    <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button facebook" target="_blank" rel="noopener noreferrer" title="Share on Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="share-button twitter" target="_blank" rel="noopener noreferrer" title="Share on Twitter/X">
+            <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="Twitter/X">
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button linkedin" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+        </a>
+        <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="share-button whatsapp" target="_blank" rel="noopener noreferrer" title="Share on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/" class="share-button instagram" target="_blank" rel="noopener noreferrer" title="Share on Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
     </div>
 
     <footer>
@@ -202,10 +180,9 @@
             }
         }
 
-
         updateTimer();
-
         setInterval(updateTimer, 1000);
     </script>
 </body>
 </html>
+    
