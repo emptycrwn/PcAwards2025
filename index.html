@@ -4,43 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You for Voting!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /*  CSS Reset (Basic) */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            padding: 0;
-            margin: 0;
-            height: 100vh;
+            min-height: 100vh; /* Use min-height for better content handling */
             display: flex;
+            flex-direction: column; /*  Allows content to push footer down */
             align-items: center;
             justify-content: center;
-            background-image: url('https://i.gifer.com/7SYH.gif');
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #000000;
+            background: url('https://i.gifer.com/7SYH.gif') center/cover no-repeat #000000; /* Shorthand background */
             animation: backgroundPulse 5s infinite;
+            color: #ffffff; /* Default text color */
         }
 
         @keyframes backgroundPulse {
-            10%, 100% {
-                filter: brightness(0.95);
-            }
-            50% {
-                filter: brightness(1.3);
-            }
+            50% { filter: brightness(1.3); }
         }
 
         .container {
             background: linear-gradient(145deg, #023342, #000203);
             padding: 3%;
             border-radius: 20px;
-            box-shadow: 0 0 30px 30px rgba(0, 35, 47, 0.6),
-             0 0 20px 20px rgba(144, 189, 200, 0.8),
-              inset 0 0 20px rgba(242, 242, 242, 0.7);
+            box-shadow:
+                0 0 30px 30px rgba(0, 35, 47, 0.6),
+                0 0 20px 20px rgba(144, 189, 200, 0.8),
+                inset 0 0 20px rgba(242, 242, 242, 0.7);
             max-width: 600px;
+            width: 90%; /*  Responsiveness */
             margin: auto;
             position: relative;
             z-index: 1;
@@ -51,14 +52,17 @@
             color: #c3c3f1;
             font-size: 2.5rem;
             font-weight: 600;
-            text-shadow: 5px 5px 0px #000203, 
-                         8px 8px 0px #023342;
+            text-shadow: 5px 5px 0 #000203, 8px 8px 0 #023342;
         }
-        
+
         p {
             font-size: 1.2rem;
-            color: #ffffff;
             line-height: 1.5;
+        }
+
+        strong { /* Make strong stand out more */
+            color: gold; /* Example:  A contrasting color */
+            font-weight: bolder;
         }
 
         .countdown {
@@ -74,44 +78,49 @@
             gap: 15px;
         }
 
-        .share-buttons a {
+        .share-button { /* Renamed for clarity and consistency */
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 5px;
-            border-radius: 60%;
-            background: radial-gradient(circle, #04505f, #000203);
-            transition: transform 0.3s, box-shadow 0.3s;
             width: 60px;
             height: 60px;
-            position: relative;
+            border-radius: 50%; /*  More common */
+            background: radial-gradient(circle, #04505f, #000203);
+            transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid #475682;
             flex-shrink: 0;
-            box-shadow: 0px 0px 15px rgba(4, 80, 95, 0.8);
+            box-shadow: 0 0 15px rgba(4, 80, 95, 0.8);
         }
 
-        .share-buttons img {
-            width: 70%;
-            height: auto;
-        }
-
-        .share-buttons a:hover {
+        .share-button:hover {
             transform: scale(1.2);
             border-color: #FFFFFF;
-            box-shadow: 0px 8px 20px rgba(71, 40, 130, 1), inset 0px 4px 8px rgba(71, 40, 130, 0.5);
+            box-shadow: 0 8px 20px rgba(71, 40, 130, 1), inset 0 4px 8px rgba(71, 40, 130, 0.5);
         }
 
+        .share-button img {
+            width: 70%;
+            height: auto;
+            display: block; /*Removes a small gap under the image in some browsers*/
+        }
+
+        /* Footer (optional, but good practice) */
+        footer {
+            margin-top: auto; /* Push footer to the bottom */
+            text-align: center;
+            padding: 1rem;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+
+        /* Media Queries */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             p { font-size: 1rem; }
-            .container {
-                padding: 5%;
-                max-width: 90%;
-            }
-            .share-buttons {
-                gap: 5px;
-            }
-            .share-buttons a {
+            .container { padding: 5%; }
+            .share-buttons { gap: 5px; }
+            .share-button {
                 width: 50px;
                 height: 50px;
             }
@@ -128,39 +137,52 @@
         </div>
 
         <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://forms.gle/LQ3MvroB1nwr1j5h9" class="facebook" target="_blank" title="Share on Facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button facebook" target="_blank" rel="noopener noreferrer" title="Share on Facebook">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
             </a>
-            <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="twitter" target="_blank" title="Share on Twitter/X">
+            <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="share-button twitter" target="_blank" rel="noopener noreferrer" title="Share on Twitter/X">
                 <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="Twitter/X">
             </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://forms.gle/LQ3MvroB1nwr1j5h9" class="linkedin" target="_blank" title="Share on LinkedIn">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button linkedin" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
             </a>
-            <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="whatsapp" target="_blank" title="Share on WhatsApp">
+            <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!" class="share-button whatsapp" target="_blank" rel="noopener noreferrer" title="Share on WhatsApp">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
             </a>
-            <a href="https://www.instagram.com/" class="instagram" target="_blank" title="Share on Instagram">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">  
+            <a href="https://www.instagram.com/" class="share-button instagram" target="_blank" rel="noopener noreferrer" title="Share on Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
             </a>
         </div>
     </div>
 
+    <footer>
+        &copy; 2025 PC.com Readers Choice Awards
+    </footer>
+
     <script>
+        const timerElement = document.getElementById("timer");
         const endTime = new Date('2025-04-30T23:59:59').getTime();
-        setInterval(() => {
+
+        function updateTimer() {
             const now = new Date().getTime();
             const timeLeft = endTime - now;
+
             if (timeLeft > 0) {
                 const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                document.getElementById("timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                timerElement.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             } else {
-                document.getElementById("timer").innerText = "Voting is Closed!";
+                timerElement.innerText = "Voting is Closed!";
             }
-        }, 1000);
+        }
+
+        // Initial call to set the timer immediately
+        updateTimer();
+
+        // Update the timer every second
+        setInterval(updateTimer, 1000);
     </script>
 </body>
 </html>
