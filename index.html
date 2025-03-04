@@ -21,13 +21,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Adjusted from center */
+            justify-content: flex-start;
             background: url('https://i.gifer.com/7SYH.gif') center/cover no-repeat #000000;
             position: relative;
             color: #ffffff;
         }
 
-        /* Dark overlay to improve text readability */
+        /* Dark overlay for better text readability */
         body::before {
             content: "";
             position: absolute;
@@ -35,7 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Darker background overlay */
+            background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
 
@@ -59,7 +59,7 @@
             color: #c3c3f1;
             font-size: 2.5rem;
             font-weight: 600;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adjusted for better readability */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
             margin-bottom: 20px;
         }
 
@@ -75,11 +75,11 @@
         }
 
         .countdown {
-            color: #00FFFF;
+            color: #00FFFF; /* Vibrant cyan */
             font-size: 1.4rem;
+            margin: 15px 0;
             font-weight: bold;
-            text-shadow: none; /* Removed unnecessary glow */
-            margin-top: 10px;
+            text-shadow: 0 0 10px #00FFFF, 0 0 20px rgba(0, 255, 255, 0.7); /* Applied the requested glow effect */
         }
 
         .share-buttons {
@@ -117,7 +117,7 @@
         }
 
         footer {
-            margin-top: 40px; /* Increased from auto */
+            margin-top: 40px;
             text-align: center;
             padding: 1rem;
             color: #888;
