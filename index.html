@@ -21,14 +21,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Adjusted from center */
             background: url('https://i.gifer.com/7SYH.gif') center/cover no-repeat #000000;
-            animation: backgroundPulse 5s infinite;
+            position: relative;
             color: #ffffff;
         }
 
-        @keyframes backgroundPulse {
-            50% { filter: brightness(1.3); }
+        /* Dark overlay to improve text readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Darker background overlay */
+            z-index: -1;
         }
 
         .header {
@@ -38,7 +46,6 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            top: 0;
             z-index: 1000;
             background: transparent;
         }
@@ -52,7 +59,7 @@
             color: #c3c3f1;
             font-size: 2.5rem;
             font-weight: 600;
-            text-shadow: 5px 5px 0 #000203, 8px 8px 0 #023342;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adjusted for better readability */
             margin-bottom: 20px;
         }
 
@@ -68,12 +75,11 @@
         }
 
         .countdown {
-            color: #00FFFF; /* Vibrant cyan */
+            color: #00FFFF;
             font-size: 1.4rem;
-            margin: 15px 0;
             font-weight: bold;
-            text-shadow: 0 0 10px #00FFFF, 0 0 20px rgba(0, 255, 255, 0.7);
-
+            text-shadow: none; /* Removed unnecessary glow */
+            margin-top: 10px;
         }
 
         .share-buttons {
@@ -111,11 +117,20 @@
         }
 
         footer {
-            margin-top: auto;
+            margin-top: 40px; /* Increased from auto */
             text-align: center;
             padding: 1rem;
             color: #888;
             font-size: 0.8rem;
+        }
+
+        .text-logo {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
         }
 
         @media (max-width: 500px) {
@@ -143,30 +158,31 @@
     </div>
 
     <div class="share-buttons">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://forms.gle/LQ3MvroB1nwr1j5h9&hashtag=%23TechAwards%20%23DawnOfAI%20%23PcAwards2025%20%23Liveatpc%20%23businesstoday" class="share-button facebook" target="_blank" rel="noopener noreferrer" title="Share on Facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button facebook" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
         </a>
-        <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+liveatPC.com+Awards+2025!+%23TechAwards+%23DawnOfAI+%23PcAwards2025+%23Liveatpc+%23businesstoday" class="share-button twitter" target="_blank" rel="noopener noreferrer" title="Share on Twitter/X">
+        <a href="https://twitter.com/intent/tweet?text=I+just+voted+for+the+PC.com+Awards+2025!" class="share-button twitter" target="_blank">
             <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg" alt="Twitter/X">
         </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://forms.gle/LQ3MvroB1nwr1j5h9&summary=I+just+voted+for+the+liveatPC.com+Awards+2025!+%23TechAwards+%23DawnOfAI+%23PcAwards2025+%23Liveatpc+%23businesstoday" class="share-button linkedin" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://forms.gle/LQ3MvroB1nwr1j5h9" class="share-button linkedin" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
         </a>
-        <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+liveatPC.com+Awards+2025!+%23TechAwards+%23DawnOfAI+%23PcAwards2025+%23Liveatpc+%23businesstoday" class="share-button whatsapp" target="_blank" rel="noopener noreferrer" title="Share on WhatsApp">
+        <a href="https://api.whatsapp.com/send?text=I+just+voted+for+the+PC.com+Awards+2025!" class="share-button whatsapp" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         </a>
-        <a href="https://www.instagram.com/" class="share-button instagram" target="_blank" rel="noopener noreferrer" title="Share on Instagram">
+        <a href="https://www.instagram.com/" class="share-button instagram" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
         </a>
     </div>
 
     <footer>
+        <img src="https://i.imgur.com/S8vjvbD.png" alt="Text Logo" class="text-logo">
         &copy; 2025 PC.com Readers Choice Awards
     </footer>
 
     <script>
         const timerElement = document.getElementById("timer");
-        const endTime = new Date('2025-04-01T00:00:00').getTime(); 
+        const endTime = new Date('2025-03-31T16:00:00').getTime();
 
         function updateTimer() {
             const now = new Date().getTime();
@@ -184,8 +200,8 @@
         }
 
         updateTimer();
-
         setInterval(updateTimer, 1000);
     </script>
+
 </body>
 </html>
